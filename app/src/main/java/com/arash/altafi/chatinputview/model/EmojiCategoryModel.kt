@@ -1,4 +1,4 @@
-package com.arash.altafi.chatinputview.emojiView
+package com.arash.altafi.chatinputview.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

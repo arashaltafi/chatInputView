@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.arash.altafi.chatinputview.R
 import com.arash.altafi.chatinputview.databinding.LayoutEmojiItemRcItemBinding
+import com.arash.altafi.chatinputview.model.EmojiCategoryModel
 
 class EmojiPagerFragment : Fragment(R.layout.layout_emoji_item_view) {
 

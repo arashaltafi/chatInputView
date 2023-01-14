@@ -11,6 +11,7 @@ import com.arash.altafi.chatinputview.R
 import com.arash.altafi.chatinputview.databinding.LayoutEmojiBinding
 import com.arash.altafi.chatinputview.databinding.LayoutEmojiItemTabBinding
 import com.arash.altafi.chatinputview.ext.loadCompat
+import com.arash.altafi.chatinputview.model.EmojiCategoryModel
 import com.google.android.material.tabs.TabLayoutMediator
 
 class EmojiView @JvmOverloads constructor(

@@ -7,15 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.net.toUri
-import androidx.navigation.fragment.findNavController
 import com.arash.altafi.chatinputview.chatInput.InputMessageAttachment
 import com.arash.altafi.chatinputview.chatInput.MessageAttachmentListener
 import com.arash.altafi.chatinputview.chatInput.MessageInputEditListener
 import com.arash.altafi.chatinputview.chatInput.MessageInputListener
 import com.arash.altafi.chatinputview.databinding.FragmentChatBinding
-import com.arash.altafi.chatinputview.emojiView.EmojiCategoryModel
 import com.arash.altafi.chatinputview.emojiView.EmojiViewListener
 import com.arash.altafi.chatinputview.ext.*
+import com.arash.altafi.chatinputview.model.ChatModel
 import com.arash.altafi.chatinputview.utils.AMRAudioRecorder
 import com.arash.altafi.chatinputview.utils.PermissionUtils
 import com.arash.altafi.chatinputview.utils.file.FileSuffixType
@@ -37,12 +36,14 @@ class ChatFragment : Fragment(), MessageInputListener,
     private var bottomBarSize = 0
     private var flagRecording = false
     private var amrAudioRecorder: AMRAudioRecorder? = null
+    private var chatAdapter = ChatAdapter()
+    private var chatModel: ArrayList<ChatModel> = arrayListOf()
 
     private val registerResultMic = PermissionUtils.register(this,
         object : PermissionUtils.PermissionListener {
             override fun observe(permissions: Map<String, Boolean>) {
                 if (permissions[PERMISSION_MIC] == true) {
-                    toast("PERMISSION_MIC OK")
+                    toast("PERMISSION MIC OK")
                 }
             }
         })
@@ -56,7 +57,7 @@ class ChatFragment : Fragment(), MessageInputListener,
     }
 
     private fun bindViews() = binding.apply {
-
+        rvChat.adapter = chatAdapter
     }
 
     override fun onClearAttachment() {
@@ -77,7 +78,6 @@ class ChatFragment : Fragment(), MessageInputListener,
             amrAudioRecorder?.start()
             if (flagRecording.not()) {
                 "sendTyping".logD(TAG)
-//                chatViewModel.sendStatus(PeerModel.UserModel.Status.SendingVoice)
                 flagRecording = true
             }
         } else {
@@ -138,7 +138,9 @@ class ChatFragment : Fragment(), MessageInputListener,
 
     override fun onSendMessage(data: InputMessageAttachment) {
         "onSendMessage".logI(TAG)
-        /*chatViewModel.sendMessage(data.message)*/
+        chatModel.add(ChatModel(data.message))
+        chatAdapter.chatList = chatModel
+        binding.rvChat.adapter = chatAdapter
     }
 
     override fun onReplyMessage(data: InputMessageAttachment) {
@@ -218,7 +220,7 @@ class ChatFragment : Fragment(), MessageInputListener,
         amrAudioRecorder = AMRAudioRecorder(getVoiceTempFile)
     }
 
-    private fun setBottomBarMargin() = binding?.apply {
+    private fun setBottomBarMargin() = binding.apply {
         bottomBar.root.post {
             bottomBarSize = bottomBar.root.height
             rvChat.setMargins(0, 0, 0, bottomBarSize)
