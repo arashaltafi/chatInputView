@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layoutDirection="ltr"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btnAttachment"
+        android:layout_width="@dimen/input_view_icon_height"
+        android:layout_height="@dimen/input_view_icon_height"
+        android:layout_gravity="bottom"
+        android:layout_marginVertical="@dimen/input_view_icon_vertical_margin"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:tint="?android:attr/textColorHint"
+        app:srcCompat="@drawable/ic_attachment" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btnEmoji"
+        android:layout_width="@dimen/input_view_icon_height"
+        android:layout_height="@dimen/input_view_icon_height"
+        android:layout_gravity="bottom"
+        android:layout_marginVertical="@dimen/input_view_icon_vertical_margin"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:tint="?android:attr/textColorHint"
+        app:srcCompat="@drawable/ic_emoji" />
+
+    <com.arash.altafi.chatinputview.chatInput.ChatEditText
+        android:id="@+id/etInput"
+        style="@style/txt.h3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:hint="@string/write"
+        android:lineSpacingExtra="5dp"
+        android:maxLines="6"
+        android:minHeight="@dimen/input_view_initial_height"
+        android:paddingVertical="8dp"
+        android:paddingRight="14dp"
+        android:scrollbars="vertical"
+        tools:text="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

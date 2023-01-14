@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_toolbar_images">10dp</dimen>
+
+    <dimen name="elevation">5dp</dimen>
+
+    <dimen name="contact_swipe_margin">25dp</dimen>
+
+    <dimen name="sliding_image_height">46dp</dimen>
+
+    <dimen name="text_drawable_size">14dp</dimen>
+
+    <dimen name="input_view_elevation_high">6dp</dimen>
+    <dimen name="input_view_elevation_mid">4dp</dimen>
+    <dimen name="input_view_elevation_low">2dp</dimen>
+
+    <dimen name="input_view_initial_height">50dp</dimen>
+    <dimen name="input_view_icon_height">40dp</dimen>
+
+    <!--  = ([input_view_initial_height] - [input_view_icon_height]) / 2 -->
+    <dimen name="input_view_icon_vertical_margin">5dp</dimen>
+
+    <dimen name="emoji_view_tab_height">36dp</dimen>
+    <dimen name="emoji_view_tab_item_size">36dp</dimen>
+    <dimen name="emoji_view_emoji_size">52dp</dimen>
+
+
+    <dimen name="chat_margin">16dp</dimen>
+</resources>

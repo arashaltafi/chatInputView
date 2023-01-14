@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">chatInputView</string>
+
+    <string name="write">بنویسید …</string>
+    <string name="slide_to_cancel">درصورت انصراف به چپ بکشید</string>
+    <string name="edit_message">ویرایش پیام</string>
+    <string name="forward_n_message">بازنشر %s پیام</string>
+    <string name="forwarded_message_from">پیام بازنشر شده از %s</string>
+    <string name="forwarded_to_">بازنشر به …</string>
+    <string name="voice_error">زمان پیام صوتی نباید کمتر از ۱ ثانیه باشد.</string>
+    <string name="deleted_message">پیام حذف شده</string>
+    <string name="not_support_file">اپلیکیشن از فایل انتخاب شده پشتیبانی نمی کند.</string>
+    <string name="not_support_file_size">حجم %s باید کمتر از %s مگابایت باشد.</string>
+    <string name="description">توضیحات</string>
+    <string name="online">آنلاین</string>
+    <string name="file">فایل</string>
+    <string name="compress">فایل فشرده</string>
+    <string name="photo">عکس</string>
+    <string name="video">فیلم</string>
+    <string name="voice">پیام صوتی</string>
+    <string name="sticker">استیکر</string>
+    <string name="music">موسیقی</string>
+    <string name="location">موقعیت مکانی</string>
+    <string name="camera">دوربین</string>
+    <string name="gallery">گالری</string>
+    <string name="pdf">پی دی اف</string>
+    <string name="permission_audio_record_message">برای ضبط صوت به دسترسی صدا نیاز است.</string>
+
+</resources>

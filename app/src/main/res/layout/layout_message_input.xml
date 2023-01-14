@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:layoutDirection="ltr"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvMain"
+        style="@style/card.round"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+        app:cardElevation="@dimen/input_view_elevation_mid"
+        app:cardUseCompatPadding="false"
+        app:contentPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/ivMainBtn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/layEdit"
+                layout="@layout/layout_message_input_attachment" />
+
+            <include
+                android:id="@+id/layInput"
+                layout="@layout/layout_message_input_input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivMainBtn"
+        android:layout_width="@dimen/input_view_initial_height"
+        android:layout_height="@dimen/input_view_initial_height"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="5dp"
+        android:background="?attr/colorPrimary"
+        android:elevation="@dimen/input_view_elevation_mid"
+        app:contentPadding="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1"
+        app:shapeAppearance="@style/appearance.round.50"
+        app:srcCompat="@drawable/ic_send"
+        app:tint="?attr/colorOnPrimary" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivStopBtn"
+        android:layout_width="@dimen/input_view_initial_height"
+        android:layout_height="@dimen/input_view_initial_height"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="5dp"
+        android:background="?attr/colorPrimary"
+        android:elevation="@dimen/input_view_elevation_mid"
+        app:contentPadding="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1"
+        app:shapeAppearance="@style/appearance.round.50"
+        app:srcCompat="@drawable/ic_round_stop_24"
+        app:tint="?attr/colorError" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivRecordBtn"
+        android:layout_width="@dimen/input_view_initial_height"
+        android:layout_height="@dimen/input_view_initial_height"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="5dp"
+        android:background="?attr/colorPrimary"
+        android:elevation="@dimen/input_view_elevation_high"
+        app:contentPadding="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1"
+        app:shapeAppearance="@style/appearance.round.50"
+        app:srcCompat="@drawable/ic_mic"
+        app:tint="?attr/colorOnPrimary" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/lRecorderLock"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        android:elevation="0dp"
+        android:translationZ="2dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="?android:attr/colorBackground"
+        app:cardCornerRadius="@dimen/input_view_initial_height"
+        app:cardElevation="@dimen/input_view_elevation_low"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/ivRecordBtn"
+        app:layout_constraintLeft_toLeftOf="@id/ivRecordBtn"
+        app:layout_constraintRight_toRightOf="@id/ivRecordBtn"
+        tools:visibility="visible">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|top"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewLock"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:padding="18dp"
+                android:src="@drawable/ic_lock" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewLockArrow"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_arrow_down" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:id="@+id/lay_slide_to_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/chat_margin"
+        android:elevation="@dimen/input_view_elevation_mid"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/ivMainBtn"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toRightOf="@+id/tvRecordTime"
+        app:layout_constraintRight_toRightOf="@id/cvMain"
+        app:layout_constraintTop_toTopOf="@+id/ivMainBtn"
+        tools:visibility="visible">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_arrow_left" />
+
+        <TextView
+            android:id="@+id/tvSlideToCancel"
+            style="@style/txt.h0.medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/slide_to_cancel"
+            android:textColor="?android:attr/textColorHint" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivRecordTrash"
+        android:layout_width="@dimen/input_view_icon_height"
+        android:layout_height="@dimen/input_view_icon_height"
+        android:layout_marginVertical="@dimen/input_view_icon_vertical_margin"
+        android:elevation="@dimen/input_view_elevation_mid"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/cvMain"
+        app:layout_constraintLeft_toLeftOf="@id/cvMain"
+        app:srcCompat="@drawable/ic_trash_open"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivRecordMic"
+        android:layout_width="@dimen/input_view_icon_height"
+        android:layout_height="@dimen/input_view_icon_height"
+        android:layout_marginVertical="@dimen/input_view_icon_vertical_margin"
+        android:elevation="@dimen/input_view_elevation_mid"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/cvMain"
+        app:layout_constraintLeft_toLeftOf="@id/cvMain"
+        app:srcCompat="@drawable/ic_mic"
+        app:tint="?attr/colorError"
+        tools:visibility="visible" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrierMic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="right"
+        app:constraint_referenced_ids="ivRecordMic,ivRecordTrash" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvRecordTime"
+        style="@style/txt.h2.medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/input_view_elevation_mid"
+        android:gravity="center"
+        android:paddingHorizontal="5dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/cvMain"
+        app:layout_constraintLeft_toRightOf="@id/barrierMic"
+        app:layout_constraintTop_toTopOf="@id/ivRecordMic"
+        tools:text="00:00"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
